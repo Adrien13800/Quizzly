@@ -10,6 +10,5 @@ export async function POST(request: Request) {
     const created = await prisma.user.create({
         data: json
     })
-
     return new NextResponse(JSON.stringify(created), {status: 201})
 }
