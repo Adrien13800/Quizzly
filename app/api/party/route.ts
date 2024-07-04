@@ -1,5 +1,5 @@
 import {NextResponse} from "next/server";
-import {authenticate} from "@/middleware/auth";
+import {prisma} from "@/lib/prisma";
 
 export async function GET(request: Request) {
     const party = await prisma.party.findMany()

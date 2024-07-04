@@ -1,16 +1,16 @@
 import {NextResponse} from "next/server";
-import {authenticate} from "@/middleware/auth";
+import {prisma} from "@/lib/prisma";
+
 
 export async function GET(request: Request, {params}: { params: { id: string } }) {
     const id = params.id
-    const category = await prisma.category.findUnique({
+    const displayTypes = await prisma.category.findUnique({
         where: {
             id: parseInt(id)
         }
     })
-    return NextResponse.json(category)
+    return NextResponse.json(displayTypes)
 }
-
 export async function PATCH(request: Request, {params}: { params: { id: string } }) {
     const id = params.id
     const json = await request.json()

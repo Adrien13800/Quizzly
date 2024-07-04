@@ -1,7 +1,8 @@
 import {NextResponse} from "next/server";
-import {authenticate} from "@/middleware/auth";
+import {prisma} from "@/lib/prisma";
 
-export async function GET(request: Request) {
+
+export async function GET() {
     const category = await prisma.category.findMany()
     return NextResponse.json(category)
 }
