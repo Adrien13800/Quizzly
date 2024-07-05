@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-    await prisma.roles.createMany({
+    await prisma.role.createMany({
         data: [
             {
                 name: "utilisateur",
@@ -23,7 +23,7 @@ async function main() {
                 password: "1234",
                 pseudo: "kaiyokenn",
                 admin: true,
-                rolesId: 2,
+                roleId: 2,
             },
             {
                 firstname: "melvin",
@@ -32,7 +32,7 @@ async function main() {
                 password: "1234",
                 pseudo: "chasseurarabe",
                 admin: true,
-                rolesId: 2,
+                roleId: 2,
             },
         ],
     });

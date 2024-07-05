@@ -4,6 +4,8 @@
 // Learn more:
 // https://pris.ly/d/help/next-js-best-practices
 
+import {PrismaClient} from "@prisma/client";
+
 const globalForPrisma = global as unknown as { prisma: PrismaClient }
 
 export const prisma =
